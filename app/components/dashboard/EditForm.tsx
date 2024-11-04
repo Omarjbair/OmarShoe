@@ -121,7 +121,7 @@ const EditForm = ({data}: iAppProps) => {
                                 <input type="hidden" key={fields.images.key} value={images} name={fields.images.name} defaultValue={data.images} />
                                 {images.length > 0?
                                 (
-                                    <div className="flex gap-5">
+                                    <div className="flex flex-wrap gap-5">
                                         {images.map((image, index) => (
                                             <div key={index} className="relative w-[100px] h-[100px]">
                                                 <Image height={100} width={100} src={image} alt="Product Image" className="w-full h-full object-cover rounded-lg border"/>

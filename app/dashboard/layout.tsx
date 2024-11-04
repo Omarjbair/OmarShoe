@@ -27,7 +27,7 @@ const DashboardLayout = async ({children,}: Readonly<{children: React.ReactNode}
         <>
             <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4">
                 <p className="font-semibold flex items-center">
-                    <TriangleAlert className="mr-2" />
+                    <TriangleAlert className="mr-2 hidden md:block"/>
                     Notice: You can access the dashboard because this is a learning project, you cant add, edit, or delete any thing in it.
                 </p>
             </div>
