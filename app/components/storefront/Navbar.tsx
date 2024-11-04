@@ -11,10 +11,10 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 const Navbar = async () => {
     const {getUser} = getKindeServerSession();
     const user = await getUser();
-
+    let total = 0
     if(user){
-        var cart: Cart | null = await redis.get(`cart-${user.id}`);
-        var total = cart?.items.reduce((sum,item) => sum + item.quantity,0) || 0;
+        const cart: Cart | null = await redis.get(`cart-${user.id}`);
+        total = cart?.items.reduce((sum,item) => sum + item.quantity,0) || 0;
     }
     
     return (
