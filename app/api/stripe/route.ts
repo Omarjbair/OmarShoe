@@ -23,13 +23,13 @@ export async function POST(req: Request){
     switch(event.type){
         case "checkout.session.completed":{
             const session = event.data.object;
-            await prisma.order.create({
-                data:{
-                    amount: session.amount_total as number,
-                    status: session.status as string,
-                    userId: session.metadata?.userId as string
-                }
-            });
+            // await prisma.order.create({
+            //     data:{
+            //         amount: session.amount_total as number,
+            //         status: session.status as string,
+            //         userId: session.metadata?.userId as string,
+            //     }
+            // });
 
             await redis.del(`cart-${session.metadata?.userId}`);
             break
